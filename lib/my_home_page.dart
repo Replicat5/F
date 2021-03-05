@@ -25,7 +25,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               Observer(
                 builder: (_) =>
-                    Text('${_shit.counte}', style: TextStyle(fontSize: 42.0)),
+                    Text('${_shit.counter}', style: TextStyle(fontSize: 42.0)),
               ),
             ],
           ),
