@@ -5,17 +5,27 @@ part 'store.g.dart';
 class Counter = _CounterStore with _$Counter ;
 
 abstract class _CounterStore with Store {
- @observable 
- int _counter = 0; 
+  @observable
+  int _counter = 0;
+
  
-
- @action 
-  void incrementCounter() {
-      _counter++;
+    @action 
+  void increment (){
+    _counter++ ;
   }
-@action 
-  void decrementCounter() {
-      _counter--;
+  
+  void decrement (){
+    _counter--;
   }
 
+  int isCounter(){
+    return _counter;
+  }
+
+
+
+
+
+
+ 
 }

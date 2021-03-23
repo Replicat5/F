@@ -28,22 +28,22 @@ mixin _$Counter on _CounterStore, Store {
       ActionController(name: '_CounterStore');
 
   @override
-  void incrementCounter() {
+  void increment() {
     final _$actionInfo = _$_CounterStoreActionController.startAction(
         name: '_CounterStore.incrementCounter');
     try {
-      return super.incrementCounter();
+      return super.increment();
     } finally {
       _$_CounterStoreActionController.endAction(_$actionInfo);
     }
   }
 
   @override
-  void decrementCounter() {
+  void decrement() {
     final _$actionInfo = _$_CounterStoreActionController.startAction(
         name: '_CounterStore.decrementCounter');
     try {
-      return super.decrementCounter();
+      return super.decrement();
     } finally {
       _$_CounterStoreActionController.endAction(_$actionInfo);
     }

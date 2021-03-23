@@ -1,4 +1,4 @@
-import 'package:Lesson1/store.dart';
+import 'package:lesson1/store.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 
@@ -8,8 +8,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  final Counter _shit = Counter();
-  
+  final Counter shit = Counter();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,33 +17,28 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text('Flutter App'),
       ),
       body: Row(children: <Widget>[
-        Center(
-          child: Column(
-            children: <Widget>[
-              Text(
-                'Количество кликов:',
-              ),
-              Observer(
-                builder: (_) =>
-                    Text('${_shit.counter}', style: TextStyle(fontSize: 42.0)),
-              ),
-            ],
-          ),
-        ),
         Column(
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: [
-            RaisedButton(
-              onPressed: _shit.incrementCounter,
-              child: Icon(Icons.add)
-              
+          children: <Widget>[
+            Text(
+              'Количество кликов:', style: TextStyle(fontSize: 12.0),
+              textAlign: TextAlign.center,
             ),
-            RaisedButton(
-              onPressed: _shit.decrementCounter,
-              child: Icon(Icons.remove)
-              
+            Observer(
+              builder: (_) =>
+                  Text('${shit.isCounter()}', style: TextStyle(fontSize: 42.0)),
             ),
           ],
+        ),
+        Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              ElevatedButton(
+                onPressed: shit.increment, child: Icon(Icons.add)),
+              ElevatedButton(
+                  onPressed: shit.decrement, child: Icon(Icons.remove)),
+            ],
+          ),
         )
       ]),
     );
